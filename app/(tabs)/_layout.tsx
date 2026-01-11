@@ -1,35 +1,38 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { Tabs } from "expo-router";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import React from "react";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+        tabBarLabelStyle: {
+          fontFamily: "ChakraPetch_500Medium",
+          fontSize: 12,
+        },
+        tabBarActiveTintColor: "#1E1D1F", // Using primary color
+        tabBarInactiveTintColor: "#9CA3AF", // Gray-400
+      }}
+    >
+
+      <Tabs.Screen name="home" options={{
+        title: "Home",
+        tabBarIcon: () => { return <MaterialIcons name="home" size={32} color="black" /> },
+      }} />
+      <Tabs.Screen name="expenses" options={{
+        title: "Expenses",
+        tabBarIcon: () => { return <MaterialIcons name="collections-bookmark" size={32} color="black" /> },
+      }} />
+      <Tabs.Screen name="analytics" options={{
+        title: "Analytics",
+        tabBarIcon: () => { return <MaterialIcons name="analytics" size={32} color="black" /> },
+      }} />
+      <Tabs.Screen name="settings" options={{
+        title: "Settings",
+        tabBarIcon: () => { return <MaterialIcons name="settings" size={32} color="black" /> },
+      }} />
     </Tabs>
-  );
+  )
 }

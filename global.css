@@ -1,0 +1,25 @@
+/* global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Colors */
+  --color-primary: #1E1D1F; /* Modern Dark - Main UI elements */
+  --color-secondary: #10B981; /* Emerald - Success, Income, Action */
+  
+  /* Status Colors */
+  --color-danger: #EF4444; /* Red - Expense, Error, Delete */
+  --color-warning: #F59E0B; /* Amber - Warning, Pending */
+  --color-info: #3B82F6; /* Blue - Information, Links */
+
+  /* Neutral/Surface Colors */
+  --color-background: #F9FAFB; /* Ultra Light Gray - App Background */
+  --color-surface: #FFFFFF; /* White - Cards, Modals */
+  --color-surface-highlight: #F3F4F6; /* Light Gray - Hover states, Inputs */
+  
+  /* Text Colors */
+  --color-text-main: #111827; /* Gray 900 */
+  --color-text-sub: #6B7280; /* Gray 500 */
+  --color-text-inverse: #FFFFFF; /* White text on dark backgrounds */
+}
